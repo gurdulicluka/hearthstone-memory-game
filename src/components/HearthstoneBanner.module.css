@@ -1,0 +1,60 @@
+.hearthstone-banner-image {
+  position: relative;
+  width: 28vw;
+  height: 130px;
+  padding-top: 20px;
+  margin: 0px auto;
+  user-select: none;
+  animation: floating 8s ease-in-out infinite;
+  -webkit-animation: floating 8s ease-in-out infinite alternate;
+}
+
+header img {
+  position: absolute;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+img.main {
+  z-index: 2;
+}
+img.glow {
+  z-index: 1;
+  transform: scale(1.02) translate(-50%, -50%);
+  -webkit-transform: scale(1.02) translate(-50%, -50%);
+  filter: brightness(0) invert(1) blur(5px);
+  -webkit-filter: brightness(0) invert(1) blur(5px);
+  animation: glowing 4s ease-in-out infinite alternate;
+  -webkit-animation: glowing 6s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hearthstone-banner-image {
+    width: 80vw;
+  }
+}
